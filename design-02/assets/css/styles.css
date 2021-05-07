@@ -1,0 +1,57 @@
+:root {
+  --color-shadow-slider: inset 0 3px 10px rgba(0,0,0,.3);
+  --color-shadow-circle: 0 8px 6px -4px rgba(0, 0, 0, .3);
+  --color-slider: #dadada;
+  --color-slider-selected: #1d1c1c;
+  --color-circle: #fff;
+  --color-circle-dark: linear-gradient(#47d8d8,#8a8af5);
+  --switch-scale-width: 1.4;
+  --switch-scale: 5;
+  --time: left 0.5s;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.switch {
+  position: relative;
+  font-size: calc(16px * var(--switch-scale));
+  width: calc(3.75em * var(--switch-scale-width));
+  height: 2.12em;  
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--color-shadow-slider);
+  background: var(--color-slider);
+  transition: var(--time);
+  border-radius: 2.12em;
+}
+.circle {
+  position: absolute;
+  width: 1.63em;
+  height: 1.63em;
+  margin: 0.25em;
+  left: 0;
+  box-shadow: var(--color-shadow-circle);
+  background: var(--color-circle);
+  transition: var(--time);
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background: var(--color-slider-selected);
+}
+input:checked + .slider > .circle {
+  background: var(--color-circle-dark);
+  left: calc(100% - 1.63em - 0.5em);
+}
