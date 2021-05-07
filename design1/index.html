@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+    <label class="switch">
+        <input id="toggle" type="checkbox">
+        <span class="slider">
+            <div class="circle">
+            </div>
+        </span>
+    </label>
+   
+   <script>
+       const nameClass = 'dark';
+       document.getElementById('toggle').addEventListener('change',({target})=>{
+        const validationCheck =target.checked;           
+        const inputClass =document.body.classList;
+        validationCheck?inputClass.add(nameClass):inputClass.remove(nameClass);
+       
+    })
+   </script>
+</body>
+</html>
